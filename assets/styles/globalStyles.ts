@@ -40,7 +40,4 @@ export const GlobalStyle = createGlobalStyle`
   .modified-pagination .rc-pagination-options {
     margin: 0;
   }
-  .modified-pagination {
-    //margin-top: 20px !important;
-  }
 `;

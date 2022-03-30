@@ -1,14 +1,8 @@
-import type {NextPage} from 'next'
+import type { NextPage } from "next";
 import { PostsPage } from "../modules/posts/PostsPage";
 
-
 const Home: NextPage = () => {
+  return <PostsPage />;
+};
 
-    return (
-        <div>
-            <PostsPage/>
-        </div>
-    )
-}
-
-export default Home
+export default Home;

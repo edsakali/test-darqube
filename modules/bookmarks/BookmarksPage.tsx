@@ -1,29 +1,38 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useQuery } from "react-query";
-import { Layout } from "../../components/Layout/Layout";
-import { PaginationComponent } from "../../components/common/Pagination";
-import { NewsList } from "../../components/common/NewsList/NewsList";
-import { useSearchNews } from "../../core/hooks/useSearchNews";
-import { NewsCard } from "../../components/common/NewsList/NewsCard";
-import { Spinner } from "../../components/common/Spinner";
-import { getNewsRequest } from "../../api/news/services";
-import { paginate, searchNews } from "../../core/helpers/helpers";
 import { useRecoilValue } from "recoil";
-import { searchState } from "../../recoil/atoms";
+import { bookmarksState, searchState } from "../../recoil/atoms";
+import { Layout } from "../../components/Layout/Layout";
+import { getNewsRequest } from "../../api/news/services";
+import { NewsCard } from "../../components/common/NewsList/NewsCard";
+import { NewsList } from "../../components/common/NewsList/NewsList";
+import { PaginationComponent } from "../../components/common/Pagination";
+import { useSearchNews } from "../../core/hooks/useSearchNews";
+import { Spinner } from "../../components/common/Spinner";
+import {
+  getBookmarksNews,
+  paginate,
+  searchNews,
+} from "../../core/helpers/helpers";
 
-export const PostsPage = () => {
+export const BookmarksPage = () => {
   const [page, setPage] = useState<number>(1);
   const searchValue = useRecoilValue(searchState);
   const { isLoading, data } = useQuery("news", getNewsRequest);
 
-  const dataFiltered = data
-    ? data.filter((item) => item.id !== data[0]?.id)
+  const bookmarks = useRecoilValue(bookmarksState);
+
+  const bookmarksNews = data
+    ? getBookmarksNews(
+        bookmarks,
+        data.filter((item) => item.id !== data[0]?.id)
+      )
     : [];
 
   const newsData = searchValue
-    ? searchNews(dataFiltered, searchValue)
-    : dataFiltered;
+    ? searchNews(bookmarksNews, searchValue)
+    : bookmarksNews;
 
   const paginateNews = paginate(newsData, page);
 
@@ -47,7 +56,7 @@ export const PostsPage = () => {
               />
             </ContentRight>
           ) : (
-            <EmptyContent>Empty</EmptyContent>
+            <EmptyContent>Empty bookmarks</EmptyContent>
           )}
         </>
       )}

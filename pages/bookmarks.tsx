@@ -1,9 +1,9 @@
-import React from 'react'
-import { NextPage } from 'next'
-import { BookmarksPage } from "../modules/bookmarks/Bookmarks";
+import React from "react";
+import { NextPage } from "next";
+import { BookmarksPage } from "../modules/bookmarks/BookmarksPage";
 
 const Bookmarks: NextPage = () => {
-    return <BookmarksPage/>
-}
+  return <BookmarksPage />;
+};
 
-export default Bookmarks
+export default Bookmarks;

@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { searchState } from "../../recoil/atoms";
-import { NewsResponse } from "../../api/posts/PostsDto";
-import { utilityServices } from "../services/utilityServices";
+
+import { searchNews } from "../helpers/helpers";
+import { NewsResponse } from "../../api/news/services";
 
 interface Props {
- news: NewsResponse[]
+  news: NewsResponse[];
 }
 
-export const useSearchNews = ({news }: Props) => {
-    const [newsData, setNewsData] = useState<NewsResponse[]>([])
+export const useSearchNews = ({ news }: Props) => {
+  const [newsData, setNewsData] = useState<NewsResponse[]>([]);
 
-    const searchValue = useRecoilValue(searchState)
+  const searchValue = useRecoilValue(searchState);
 
-    useEffect(()=> {
-        setNewsData(news)
-        searchValue && setNewsData(utilityServices.searchNews(news, searchValue))
-    }, [searchValue])
+  useEffect(() => {
+    setNewsData(news);
+    searchValue && setNewsData(searchNews(news, searchValue));
+  }, [searchValue]);
 
-    return {newsData, setNewsData}
-}
+  return { newsData, setNewsData };
+};
