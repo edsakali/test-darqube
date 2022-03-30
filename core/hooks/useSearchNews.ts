@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { NewsResponse } from "../../api/posts/PostsDto";
 import { useRecoilValue } from "recoil";
 import { searchState } from "../../recoil/atoms";
+import { NewsResponse } from "../../api/posts/PostsDto";
 import { utilityServices } from "../services/utilityServices";
 
 interface Props {

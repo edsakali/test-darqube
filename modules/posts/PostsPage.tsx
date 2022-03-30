@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Layout } from "../../components/Layout/Layout";
 import { useQuery } from "react-query";
+import { Layout } from "../../components/Layout/Layout";
 import { postsServices } from "../../api/posts/services";
 import { PaginationComponent } from "../../components/common/Pagination/Pagination";
 import { NewsList } from "../../components/common/PostsList/NewsList";

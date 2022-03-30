@@ -1,10 +1,10 @@
-import { NewsResponse } from "../../../../api/posts/PostsDto";
 import styled from "styled-components";
+import { useRecoilState } from "recoil";
+import { bookmarksState } from "../../../../recoil/atoms";
+import { NewsResponse } from "../../../../api/posts/PostsDto";
 import FavoriteIcon from '../../../../assets/icons/favorite.svg'
 import UnFavoriteIcon from '../../../../assets/icons/unFavorite.svg'
 import ArrowCircle from '../../../../assets/icons/arrowCircle.svg'
-import { useRecoilState, useRecoilValue } from "recoil";
-import { bookmarksState } from "../../../../recoil/atoms";
 import { utilityServices } from "../../../../core/services/utilityServices";
 
 interface Props {
@@ -91,14 +91,12 @@ const Headline = styled.a<{$latest?: boolean}>`
   font-size: ${({$latest}) => $latest ? '24px' : '20px'};
   line-height: ${({$latest}) => $latest ? '32px' : '28px'};
   color: white;
-  line-height: 28px;
   text-decoration: none;
   cursor: pointer;
 `
 
 const Summary = styled.div<{$latest?: boolean}>`
   margin:  10px 0 20px 0;
-  font-size: 12px;
   font-size: ${({$latest}) => $latest ? '14px' : '12px'};
   line-height: ${({$latest}) => $latest ? '18px' : '16px'};
   color: white;

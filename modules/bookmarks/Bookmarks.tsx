@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useQuery } from "react-query";
 import { useRecoilValue } from "recoil";
+import { bookmarksState } from "../../recoil/atoms";
 import { Layout } from "../../components/Layout/Layout";
 import { postsServices } from "../../api/posts/services";
 import { NewsCard } from "../../components/common/PostsList/NewsCard/NewsCard";
@@ -9,7 +10,6 @@ import { NewsList } from "../../components/common/PostsList/NewsList";
 import { PaginationComponent } from "../../components/common/Pagination/Pagination";
 import { useSearchNews } from "../../core/hooks/useSearchNews";
 import { utilityServices } from "../../core/services/utilityServices";
-import { bookmarksState } from "../../recoil/atoms";
 import { Spinner } from "../../components/common/Spinner/Spinner";
 
 export const BookmarksPage = () => {

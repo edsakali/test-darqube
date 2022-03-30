@@ -45,7 +45,6 @@ const PaginationLeft = styled.div`
   width: 100%;
   font-size: 12px;
   color: white;
-  positon: absolute;
   left: 0;
 `
 

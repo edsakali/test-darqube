@@ -18,8 +18,10 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
 
   @media screen and (min-width: 850px){
+    padding-bottom: 40px;
     flex-direction: row;
     grid-template-columns: 1fr 1fr;
   }

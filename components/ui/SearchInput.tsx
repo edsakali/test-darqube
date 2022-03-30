@@ -1,6 +1,6 @@
+import { ChangeEvent } from "react";
 import styled from "styled-components";
 import Search from '../../assets/icons/search.svg'
-import { ChangeEvent } from "react";
 
 interface Props {
     placeholder: string,

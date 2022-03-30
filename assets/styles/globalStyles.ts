@@ -41,6 +41,6 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
   .modified-pagination {
-    margin-top: 20px !important;
+    //margin-top: 20px !important;
   }
 `;

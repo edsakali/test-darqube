@@ -1,9 +1,9 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { SearchInput } from "../../../ui/SearchInput";
+import { useRouter } from "next/router";
 import { useSetRecoilState } from "recoil";
 import { searchState } from "../../../../recoil/atoms";
+import { SearchInput } from "../../../ui/SearchInput";
 import { useDebounce } from "../../../../core/hooks/useDebounce";
-import { useRouter } from "next/router";
 
 export const Search = () => {
     const { pathname } = useRouter()
