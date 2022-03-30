@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import Pagination, { PaginationProps } from "rc-pagination";
 import styled from "styled-components";
 

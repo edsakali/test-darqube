@@ -72,8 +72,8 @@ const Card = styled.div<{ $latest?: boolean }>`
   flex-direction: column;
   justify-content: space-between;
   border-radius: 6px;
+  background: linear-gradient(180deg, rgba(28, 58, 82, 0) 0%, #05141b 75.5%);
   background-size: cover;
-  background-position: center;
   background-blend-mode: overlay;
   ${({ $latest }) => css`
     padding: ${$latest ? "30px" : "25px"};
