@@ -1,5 +1,5 @@
 import moment from "moment";
-import { NewsResponse } from "../../api/posts/PostsDto";
+import {NewsResponse} from "../../api/posts/PostsDto";
 
 const formatDate = (datetime: number) => moment(new Date(datetime * 1000)).format('DD/MMM').replace('/', ' ').toString()
 
