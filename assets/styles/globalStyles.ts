@@ -17,4 +17,30 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 14px;
     font-weight: 400;
   }
+
+  .modified-pagination .rc-pagination-jump-prev,
+  .modified-pagination .rc-pagination-jump-next,
+  .modified-pagination .rc-pagination-item {
+    display: none;
+  }
+  .modified-pagination .rc-pagination-total-text {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+  }
+  .modified-pagination .rc-pagination-next > button::after,
+  .modified-pagination .rc-pagination-prev > button::after {
+    display: none;
+  }
+  .modified-pagination .rc-pagination-next > button,
+  .modified-pagination .rc-pagination-prev > button {
+    color: white;
+  }
+  .modified-pagination .rc-pagination-options {
+    margin: 0;
+  }
+  .modified-pagination {
+    margin-top: 20px !important;
+  }
 `;

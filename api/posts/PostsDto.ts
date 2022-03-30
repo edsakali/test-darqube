@@ -1,6 +1,6 @@
-export type PostsParams = {
+export type NewsResponse = {
     category: string;
-    datetime: number | string;
+    datetime: number;
     headline: string;
     id: number;
     image: string;

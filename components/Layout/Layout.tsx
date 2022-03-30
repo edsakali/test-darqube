@@ -1,16 +1,26 @@
-import {FC} from 'react'
+import { FC } from 'react'
 import styled from "styled-components";
-import {AppHeader} from "./AppHeader/AppHeader";
+import { AppHeader } from "./AppHeader/AppHeader";
 
-export const Layout: FC = ({children})=>{
+export const Layout: FC = ({children}) => {
     return <LayoutWrapper>
         <AppHeader/>
-
-        {children}
+        <Content>
+            {children}
+        </Content>
     </LayoutWrapper>
 }
 
 const LayoutWrapper = styled.main`
-  height: 100vh;
   padding: 40px 0;
+`
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media screen and (min-width: 850px){
+    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
+  }
 `

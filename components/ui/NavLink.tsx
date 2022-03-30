@@ -1,13 +1,14 @@
-import React from 'react'
+import {FC} from 'react'
 import { useRouter } from 'next/router'
 import Link, { LinkProps } from 'next/link'
 import styled from "styled-components";
 
 interface Props extends LinkProps {
-    text: string
+    text: string;
+
 }
 
-export const NavLink = ({ text, ...props }: Props) => {
+export const NavLink: FC<Props> = ({ text, ...props }) => {
     const { pathname } = useRouter()
     return (
         <Link {...props} passHref>
@@ -15,6 +16,7 @@ export const NavLink = ({ text, ...props }: Props) => {
         </Link>
     )
 }
+
 
 const StyledLink = styled.a<{$active: boolean}>`
   font-family: 'Ubuntu';
