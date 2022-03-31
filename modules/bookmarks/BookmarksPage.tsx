@@ -22,12 +22,7 @@ export const BookmarksPage = () => {
 
   const bookmarks = useRecoilValue(bookmarksState);
 
-  const bookmarksNews = data
-    ? getBookmarksNews(
-        bookmarks,
-        data.filter((item) => item.id !== data[0]?.id)
-      )
-    : [];
+  const bookmarksNews = data ? getBookmarksNews(bookmarks, data.slice(1)) : [];
 
   const newsData = searchValue
     ? searchNews(bookmarksNews, searchValue)

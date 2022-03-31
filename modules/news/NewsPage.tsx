@@ -16,9 +16,7 @@ export const NewsPage = () => {
   const searchValue = useRecoilValue(searchState);
   const { isLoading, data } = useQuery("news", getNewsRequest);
 
-  const dataFiltered = data
-    ? data.filter((item) => item.id !== data[0]?.id)
-    : [];
+  const dataFiltered = data ? data.slice(1) : [];
 
   const newsData = searchValue
     ? searchNews(dataFiltered, searchValue)
