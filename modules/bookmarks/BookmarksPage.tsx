@@ -8,7 +8,6 @@ import { getNewsRequest } from "../../api/news/services";
 import { NewsCard } from "../../components/common/NewsList/NewsCard";
 import { NewsList } from "../../components/common/NewsList/NewsList";
 import { PaginationComponent } from "../../components/common/Pagination";
-import { useSearchNews } from "../../core/hooks/useSearchNews";
 import { Spinner } from "../../components/common/Spinner";
 import {
   getBookmarksNews,

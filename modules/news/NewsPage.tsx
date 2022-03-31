@@ -4,7 +4,6 @@ import { useQuery } from "react-query";
 import { Layout } from "../../components/Layout/Layout";
 import { PaginationComponent } from "../../components/common/Pagination";
 import { NewsList } from "../../components/common/NewsList/NewsList";
-import { useSearchNews } from "../../core/hooks/useSearchNews";
 import { NewsCard } from "../../components/common/NewsList/NewsCard";
 import { Spinner } from "../../components/common/Spinner";
 import { getNewsRequest } from "../../api/news/services";
@@ -12,7 +11,7 @@ import { paginate, searchNews } from "../../core/helpers/helpers";
 import { useRecoilValue } from "recoil";
 import { searchState } from "../../recoil/atoms";
 
-export const PostsPage = () => {
+export const NewsPage = () => {
   const [page, setPage] = useState<number>(1);
   const searchValue = useRecoilValue(searchState);
   const { isLoading, data } = useQuery("news", getNewsRequest);
